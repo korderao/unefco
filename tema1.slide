@@ -1,18 +1,15 @@
-SERVIDOR WEB
-
+INTRODUCCIÓN AL USO DE COMPUTADORA PARA EDUCADORES
+OFIMÁTICA BASICA
 Jose Luis Cordero Llanos
-Developer
+Ing. de Sistemas
 korderao@gmail.com
 @korderao
 http://itgroup.systems
 
-* INSTALACION APACHE
-- Apache, es un servidor web HTTP de código abierto, para distintas plataformas, que implementa el protocolo HTTP/1.12 Podemos instalar Apache fácilmente usando gestor de paquetes de CentOS “yum”. Para iniciar, tecleamos los siguientes comandos:
-  # yum install httpd
-- Ya instalado el servidor web, procedemos a iniciar el servicio.
-  # systemctl start|stop|restart|status httpd
-- Para que arranque junto con el sistema:
-	# systemctl enable httpd
+* TEMA 1 -LA ESTRUCTURA DE LA COMPUTADORA
+- LA COMPUTADORA.
+- COMPONENTES DE LA COMPUTADORA.
+- 
 
 * AGREGAMOS EL SERVICIO AL FIREWALL
 
