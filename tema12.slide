@@ -1,12 +1,12 @@
-SERVIDOR FTP
+INTRODUCCIÓN AL USO DE COMPUTADORA PARA EDUCADORES
 
 Jose Luis Cordero Llanos
-Developer
+Ing. de Sistemas
 korderao@gmail.com
 @korderao
 http://itgroup.systems
 
-* ASIGNAR IP ESTATICA 
+* 1.- LA ESTRUCTURA DE LA COMPUTADORA 
 - Vamos a asignar una dirección IP estática a la tarjeta de red que ofrecerá el servicio FTP.
  etc/sysconfig/network-scripts/ifcfg-eth0
 - Editamos algunas lineas
