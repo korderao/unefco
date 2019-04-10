@@ -1,59 +1,66 @@
-INTRODUCCIÓN AL USO DE COMPUTADORA PARA EDUCADORES
+SERVIDOR FTP
+
 Jose Luis Cordero Llanos
-Ing. de Sistemas
+Developer
 korderao@gmail.com
 @korderao
 http://itgroup.systems
 
-* TEMA 1 -LA ESTRUCTURA DE LA COMPUTADORA
-- LA COMPUTADORA.
-- COMPONENTES DE LA COMPUTADORA.
-
-* AGREGAMOS EL SERVICIO AL FIREWALL
-
-- Agregamos el servicio:
-  # sudo firewall-cmd --permanet --add-service=http
-- Reiniciamos el firewall:
-  # firewall-cmd --reload
-- Listamos configuracion del firewall:
-  # firewall-cmd --list-all
-.image image/firewall.png _ 490
-  
-* ACCEDEMOS DESDE EL NAVEGADOR
-- Ahora procedemos a verificar que el servicio funcione de manera correcta. Para esto, escribimos la dirección IP de nuestro Server en nuestro navegador web favorito.
-  http://IP_del_servidor/
-.image image/httpd.png _ 690
-
-* INSTALACION DE PHP
-- PHP es el acrónimo recursivo de PHP: Hypertext Preprocessor, que es un lenguaje enfocado para el desarrollo web que permite ejecutar scripts, conectarse con bases de datos de MySQL/MariaDB y muchas otras características.
-- Para instalar PHP simplemente ejecutamos:
-  # yum install php
-- Con esto, solo basta reiniciar el servidor web Apache en nuestro Server para que Apache trabaje con PHP:
-  # systemctl restart httpd
-- Sin embargo, es muy común usar librerías o módulos adicionales, que nos permiten incrementar las características de PHP, esto lo hacemos ejecutando:
-  # yum search php
-* COMPROBAMOS QUE APACHE TRABAJE CON PHP 
-- Ahora debemos comprobar que el servidor web Apache trabaje correctamente con nuestra configuración de PHP.
-- Vamos a crear para esto, un script llamado test.php en el directorio web por defecto en la instalación del servidor web Apache.
-- Por defecto, en un sistema operativo CentOS 7, debemos guardar nuestro script en la carpeta “/var/www/html/”
-  # nano /var/www/html/test.php
-- En este archivo, agregamos el siguiente contenido y guardamos el archivo:
- <?php phpinfo(); ?>
-* ACCEDEMOS DESDE EL NAVEGADOR
-  http://IP_del_servidor/test.php
-.image image/php.png _ 590
-* INSTALANDO MARIA DB o MYSQL
-- Por último, solo necesitamos instalar nuestro manejador de bases de datos.
-- MariaDB es un sistema de gestión de bases de datos derivado de MySQL con licencia GPL.
-  # yum install mariadb-server mariadb
-- Iniciamos MariaDB con el siguiente comando:
-  # systemctl start|stop|restart|status mariadb
-* CONFIGURACION 
-- Adicionalmente, para asegurar nuestra instalación de MariaDB, ejecutamos el script de seguridad:
-  # mysql_secure_installation
-- Lo que nos solicita alguna información, como un cambio de contraseña para el usuario root (por default no cuenta con password)
-- Eliminar el usuario “anonymous” 
-- Negar el acceso remoto al usuario root
-- Eliminar la base de datos “test”, y finalmente recargar los privilegios.
-* CONFIGURACION 
-.image image/mariadb.png _ 490
+* ASIGNAR IP ESTATICA 
+- Vamos a asignar una dirección IP estática a la tarjeta de red que ofrecerá el servicio FTP.
+ etc/sysconfig/network-scripts/ifcfg-eth0
+- Editamos algunas lineas
+ BOOTPROTO=static
+ IPADDR=192.168.1.101
+ NETMASK=255.255.255.0
+- Por ultimo, reiniciamos la interfaz: 
+ ifdown enp0s3 → ifup enp0s3 
+- Comprobamos la nueva configuración: 
+ ip addr
+* 1. INSTALACION
+- Para instalar vsftpd hay que ejecutar el siguiente comando, y luego aceptar la instalación sugerida:
+	yum install vsftpd
+- Para iniciar:
+	systemctl start vsftpd.service
+- Para parar:
+	systemctl stop vsftpd.service
+- Para reiniciar:
+	systemctl restart vsftpd.service
+- Para que arranque junto con el sistema:
+	systemctl enable vsftpd.service
+* ARCHIVO DE CONFIGURACION
+- Archivo 
+	/etc/vsftpd/vsftpd.conf
+* PARAMETROS DE CONFIGURACION
+- Habilitar el acceso FTP a usuarios anónimos:
+	anonymous_enable=YES
+- Permitir el acceso de usuarios locales a sus respectivas carpetas privadas,utilizando su propio login y password para acceder al servidor FTP
+	local_enable=YES
+- Permitir el modo escritura a los usuarios
+	write_enable=YES
+- Enjaula a los usuarios dentro de su propio directorio personal
+	chroot_local_user=YES
+* PARAMETROS DE CONFIGURACION
+- Habilita la lista de usuarios que sólo puedan acceder a sus respectivas carpetas personales al hacer el FTP y no a todo sistema
+	chroot_list_enable=YES
+	chroot_list_file=/etc/vsftpd.chroot_list
+- Mensaje de bienvenida que muestra en pantalla el mensaje que esté entre comillas dobles, cuando alguien se conecta al servidor
+	ftpd_banner= “mensaje de bienvenida”.
+- Activa el registro de errores, quién se conecta, etc.
+	xferlog_enable=YES
+- Especifica el archivo de registros.
+	xferlog_file= ruta/archivo
+* HABILITAR FIREWALL
+- Para abrir el puerto en el firewall:
+  firewall-cmd --permanent --add-service=ftp
+  firewall-cmd --list-all
+  firewall-cmd --reload
+* CREAMOS USUARIO FTP
+- crear usuario academy
+  useradd -g ftp -d /home/academy academy
+- asignamos contrasena
+  passwd academy
+* HABILITAR HOME DEL USUARIO
+ getsebool -a | grep ftp
+- Si el anterior comando nos muestra el valor en off
+setsebool -P tftp_home_dir on 
