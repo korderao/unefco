@@ -9,18 +9,21 @@ http://itgroup.systems
 * 1.- SISTEMA OPERATIVO WINDOWS 
 - ENCENDIDO, APAGADO, SUSPENDIDO e HIBERNACION
 - ESCRITORIO
-- ACCESOS DIRECTOS
-- BOTON DE INICIO 
+    un fondo de pantalla 
+    barra de tareas
+    accesos directos
+    boton de inicio
 - VENTANAS
     1. Barra de título (normalmente indica el nombre del programa en uso)
     2. Barra de herramientas (muestra las funciones propias del programa)
     3. Cambiar de vista
     4. Botones (minimizar, maximizar, cerrar)
     5. Área de trabajo
-- TIPOS DE VENTANAS
+* TIPOS DE VENTANAS
   APLICACION
   CUADROS DE DIALOGO
-* PERSONALIZACION DEL ESCRITORIO
+- PERSONALIZANDO EL ESCRITORIO DE WINDOWS
+- CREACION DE ACCESOS DIRECTOS
 - PANEL DE CONTROL
 - INSTALACION DESINSTALACION
 - ANTIVIRUS
