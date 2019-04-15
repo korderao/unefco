@@ -1,4 +1,4 @@
-EL SISTEMA OPERATIVO
+OPERACIONES CON CARPETAS Y ARCHIVOS
 
 Jose Luis Cordero Llanos
 Ing. de Sistemas
@@ -6,24 +6,26 @@ korderao@gmail.com
 @korderao
 http://itgroup.systems
 
-* 1.- SISTEMA OPERATIVO WINDOWS 
-- ENCENDIDO, APAGADO, SUSPENDIDO e HIBERNACION
-- ESCRITORIO
-    un fondo de pantalla 
-    barra de tareas
-    accesos directos
-    boton de inicio
-- VENTANAS
-    1. Barra de título (normalmente indica el nombre del programa en uso)
-    2. Barra de herramientas (muestra las funciones propias del programa)
-    3. Cambiar de vista
-    4. Botones (minimizar, maximizar, cerrar)
-    5. Área de trabajo
-* TIPOS DE VENTANAS
-  APLICACION
-  CUADROS DE DIALOGO
-- PERSONALIZANDO EL ESCRITORIO DE WINDOWS
-- CREACION DE ACCESOS DIRECTOS
-- PANEL DE CONTROL
-- INSTALACION DESINSTALACION
-- ANTIVIRUS
+* 1.- EXPLORADOR DE ARCHIVOS
+
+- CARPETAS
+    Abrir Carpetas
+    Crear Carpetas    
+    
+- ARCHIVOS
+    Archivo de Texto
+    Archivo de Hoja de Calculo
+    Archivo de Música
+    
+- CREAR ARCHIVOS
+    Guardar Archivos
+    Copiar, Cortar y Pegar 
+    Cambiar nombre a un archivo
+    Borrar o Eliminar un archivo
+    
+ - PAPELERA DE RECICLAJE
+    Recuperar un Archivo Borrado
+    Vaciar la Papelera
+    
+    
+    
