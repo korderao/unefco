@@ -6,7 +6,7 @@ korderao@gmail.com
 @korderao
 http://itgroup.systems
 
-* 1.- PROCESADOR DE TEXTO 
+* PROCESADOR DE TEXTO 
 - Ingresar al Procesador de Texto Word
 - Entorno de trabajo
     Barra de título
@@ -14,10 +14,10 @@ http://itgroup.systems
     Barras de Desplazamiento Vertical y Horizontal
     Barra de Estado
     Vista de Documentos
-* TRABAJANDO CON DOCUMENTOS
-- Crear un Documento
-- Abrir un Documento
-- Guardar un Documento
+- TRABAJANDO CON DOCUMENTOS
+    Crear un Documento
+    Abrir un Documento
+    Guardar un Documento
 * EDICION DE TEXTO
 - Formato de Texto
     negrilla, cursiva y subrayado
@@ -31,4 +31,4 @@ http://itgroup.systems
     Listas numerada, viñetas y multinivel
     Estilos
     Buscar, reemplazar
-* SIMBOLOS Y ECUACIONES
+- SIMBOLOS Y ECUACIONES
