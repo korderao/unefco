@@ -22,6 +22,8 @@ http://itgroup.systems
 - HARDWARE (COMPONENTES EXTERNOS)
 	GABINETE
 * DISPOSITIVOS DE ENTRADA DE DATOS DE UNA COMPUTADORA
+
+.background background.png
 	LECTOR CD/DVD/BLUERAY
 	TECLADO
 	MOUSE / TOUCHPAD
@@ -36,6 +38,9 @@ http://itgroup.systems
 	DISCOS DUROS EXTERNOS
 	CD, DVD, BLUERAY, MEMORIAS FLASH(PENDRIVE)
 * COMPONENTES LOGICOS SOFTWARE
+
+
+.background background.png
 - SOFTWARE BASE O SISTEMA OPERATIVO
 	WINDOWS, GNU/LINUX, MacOS
 - SOFTWARE DE APLICACIONES
@@ -52,5 +57,8 @@ http://itgroup.systems
 	boton derecho
 	ruda de desplazamiento
 	botones macros
-* MINI PC 
+* MINI PC
+
+
+.background background.png
 raspberry
